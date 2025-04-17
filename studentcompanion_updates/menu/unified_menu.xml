@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <!-- Student Menu Items -->
+    <item
+        android:id="@+id/student_menu"
+        android:title="Student Options"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_browse_courses"
+                android:title="Browse Courses"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_view_grades"
+                android:title="View Grades"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <!-- Teacher Menu Items -->
+    <item
+        android:id="@+id/teacher_menu"
+        android:title="Teacher Options"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_add_course"
+                android:title="Add Course"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_manage_assignments"
+                android:title="Manage Assignments"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <!-- Admin Menu Items -->
+    <item
+        android:id="@+id/admin_menu"
+        android:title="Admin Options"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_manage_users"
+                android:title="Manage Users"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_system_settings"
+                android:title="System Settings"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <!-- Role Request Options -->
+    <item
+        android:id="@+id/role_requests"
+        android:title="Role Requests"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_request_teacher"
+                android:title="Request Teacher Role"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_request_admin"
+                android:title="Request Admin Role"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <!-- Common Menu Items -->
+    <item
+        android:id="@+id/action_profile"
+        android:title="My Profile"
+        app:showAsAction="never" />
+    
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        app:showAsAction="never" />
+    
+</menu> 
