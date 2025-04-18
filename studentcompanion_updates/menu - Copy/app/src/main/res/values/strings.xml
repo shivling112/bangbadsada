@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Student Companion</string>
-    <string name="welcome_message">Welcome to Student Companion</string>
-    <string name="profile">My Profile</string>
-    <string name="logout">Logout</string>
-</resources> 

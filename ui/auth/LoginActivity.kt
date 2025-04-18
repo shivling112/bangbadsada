@@ -114,33 +114,33 @@ class LoginActivity : AppCompatActivity() {
     }
     
     /**
-     * Redirect to appropriate screen based on user role
+     * Redirect user to appropriate screen based on role
      */
     private fun redirectToAppropriateScreen() {
-        val userId = firebaseManager.currentUser?.uid ?: return
-        
-        showProgress(true)
+        val userId = firebaseManager.currentUser?.uid
+            ?: return
         
         lifecycleScope.launch {
             try {
-                val result = firebaseManager.getUserProfile(userId)
+                val profileResult = firebaseManager.getUserProfile(userId)
                 
-                result.fold(
+                profileResult.fold(
                     onSuccess = { profile ->
+                        // Navigate to appropriate dashboard based on user type
                         val intent = when (profile.userType) {
                             UserType.ADMIN -> Intent(this@LoginActivity, AdminDashboardActivity::class.java)
                             UserType.TEACHER -> Intent(this@LoginActivity, TeacherDashboardActivity::class.java)
                             UserType.STUDENT -> Intent(this@LoginActivity, StudentDashboardActivity::class.java)
                         }
                         
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
-                        finish() // Close LoginActivity
+                        finish()
                     },
                     onFailure = { e ->
                         Log.e(TAG, "Failed to get user profile: ${e.message}")
-                        // If we can't get the user profile, default to student dashboard
-                        startActivity(Intent(this@LoginActivity, StudentDashboardActivity::class.java))
-                        finish() // Close LoginActivity
+                        showProgress(false)
+                        showError("Failed to get user profile: ${e.message}")
                     }
                 )
             } catch (e: Exception) {

@@ -155,8 +155,7 @@ class FirebaseManager private constructor() {
                 email = email,
                 details = details,
                 requestedRole = UserType.TEACHER,
-                status = "pending",
-                timestamp = System.currentTimeMillis()
+                status = "pending"
             )
             
             teacherRequestsCollection.document(requestId).set(request).await()
@@ -186,8 +185,7 @@ class FirebaseManager private constructor() {
                 email = email,
                 details = details,
                 requestedRole = UserType.ADMIN,
-                status = "pending",
-                timestamp = System.currentTimeMillis()
+                status = "pending"
             )
             
             adminRequestsCollection.document(requestId).set(request).await()

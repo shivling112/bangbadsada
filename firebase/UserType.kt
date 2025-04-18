@@ -1,7 +1,7 @@
 package com.example.collegeapp.firebase
 
 /**
- * Enum class representing user types/roles in the application
+ * Enum representing different user types/roles in the application
  */
 enum class UserType {
     STUDENT,
